@@ -1,0 +1,155 @@
+:root {
+    --bg-color: #1a1a1a;
+    --bg-element: #242424;
+    --on-bg: #e1e1e1;
+    --on-bg-medium: #979797;
+    --on-primary: #213547;
+
+    --primary: #42b883;
+    --primary-variant1: #50afc0;
+    --primary-variant2: #6089f1;
+    --cutoff : 1450px;
+
+    --color-shadow-dark: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* New scrollbar, does not work on firefox */
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+body {
+    position: relative;
+    margin: 0;
+    background: var(--bg-color);
+    color: var(--on-bg);
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    margin-left: 2rem;
+    margin-top: 5rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Header Navbar */
+
+header {
+    position: fixed;
+    width: 100%;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: var(--bg-element);
+    display: flex;
+}
+
+.topnav a {
+    color: var(--on-bg);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover:not(:last-child) {
+    color: var(--primary);
+    transition: ease-out 0.2s;
+}
+
+.topnav a.active {
+    background-color: var(--primary);
+    color: var(--on-bg);
+}
+
+.topnav .burger-icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.burger-icon {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive .burger-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        display: block;
+    }
+    .topnav.responsive {
+        flex-direction: column;
+    }
+    .topnav {
+        justify-content: space-between;
+    }
+}
+
+/* footer */
+footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    background: -webkit-linear-gradient(315deg, var(--primary), var(--primary-variant2));
+    color: var(--on-bg);
+}
+
+.footer-text {
+    display: inline-block;
+    text-align: left;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Pagination Element */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.page-counter {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin: auto 0 auto 0
+}
+
+/* Button */
+button {
+    transition: 0.1s ease-in-out;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: var(--bg-element);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--bg-element);
+    color: white;
+    border: revert;
+    border-color: var(--primary);
+}

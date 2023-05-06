@@ -1,0 +1,108 @@
+/* Styling of the cover element. It displays the cover of an anime and the title */
+.cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-element);
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    transition: all 500ms;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cover:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+}
+
+.cover img {
+    width: 100%;
+    aspect-ratio: 1 / 1.41;
+}
+
+.cover p {
+    color: var(--on-bg);
+    line-height: 1.5em;
+    height: 3em;
+    word-wrap: break-word;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.cover:hover p {
+    color: var(--primary);
+    transition: all 500ms;
+}
+
+.cover a {
+    text-decoration: none; /* no underline */
+}
+
+/* The grid displaying the different covers in a responsive way */
+.cover-grid {
+    margin: auto;
+    max-width: 1400px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 160px));
+    grid-template-rows: min-content auto;
+
+}
+
+@media screen and (max-width: 1200px) {
+    .cover-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .cover-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+}
+
+.Webpage-cover h2{
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+/* grid for cards without images */
+.cover-grid-text-only {
+    margin: auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 160px));
+    grid-template-rows: auto;
+}
+
+@media screen and (max-width: 720px) {
+    .cover-grid-text-only {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+.cover-grid-text-only .cover p {
+    color: var(--on-bg);
+    line-height: 1.5em;
+    height: 6em;
+    word-wrap: break-word;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.cover-grid-text-only .cover:hover p {
+    color: var(--primary);
+    transition: all 500ms;
+}
+
+.cover-grid-text-only .cover a {
+    text-decoration: none; /* no underline */
+}
